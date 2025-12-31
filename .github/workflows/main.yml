@@ -1,0 +1,26 @@
+name: Kiem Tra Prompt Tu AI Studio
+# Kích hoạt workflow mỗi khi có hành động "push" (lưu file) vào nhánh main
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Bước 1: Lấy mã nguồn từ repository về máy ảo của GitHub
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Bước 2: Liệt kê các file để kiểm tra
+      - name: Danh sach cac file Prompt hien tai
+        run: |
+          echo "Hệ thống đang kiểm tra các file bạn vừa lưu..."
+          ls -R
+          
+      # Bước 3: Một thông báo nhỏ khi hoàn tất
+      - name: Thong bao thanh cong
+        run: echo "Dữ liệu từ Google AI Studio đã được ghi nhận trên GitHub an toàn."
