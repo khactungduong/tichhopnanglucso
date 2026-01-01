@@ -2,14 +2,14 @@
 import { GoogleGenAI, Type } from "@google/genai";
 import { ProcessingMode } from "../types";
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+const ai = new GoogleGenerativeAI("AIzaSyDOCOwAnkqPwXbbGnUHFmJXcjOaKoRoXtM");
 
 export const integrateDigitalCompetency = async (
   originalContent: string,
   mode: ProcessingMode,
   selectedIndicators: string[] = []
 ) => {
-  const model = 'gemini-3-pro-preview';
+  const model = 'gemini-1.5-flash';
   
   const systemInstruction = `BẠN LÀ CHUYÊN GIA THIẾT KẾ GIÁO ÁN VÀ TÍCH HỢP NĂNG LỰC SỐ TRONG GIÁO DỤC PHỔ THÔNG VIỆT NAM.
 
